@@ -1,0 +1,16 @@
+# 服务端口号
+server:
+  port: 1001
+
+eureka:
+  instance:
+    # 注册中心ip
+    hostname: localhost
+  client:
+    serviceUrl:
+      # 注册地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    # 是否自己注册给自己, 其它集群是true
+    register-with-eureka: false
+    # 自己是注册中心, 不需要检索服务信息
+    fetch-registry: false
