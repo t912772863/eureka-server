@@ -3,9 +3,12 @@ server:
   port: 1001
 
 eureka:
+  server:
+    # 禁用自我保护机制(一般本地用)
+    enable-self-preservation: false
   instance:
     # 注册中心ip
-    hostname: localhost
+    hostname: 127.0.0.1
   client:
     serviceUrl:
       # 注册地址
